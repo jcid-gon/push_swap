@@ -6,7 +6,7 @@
 /*   By: jcid-gon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 13:40:21 by jcid-gon          #+#    #+#             */
-/*   Updated: 2021/09/21 15:33:48 by jcid-gon         ###   ########.fr       */
+/*   Updated: 2021/09/28 15:20:59 by jcid-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	last_sort(t_nums *a)
 
 	index = 0;
 	min = a->array[0];
-	while (index > a->len - 1)
+	pos = 0;
+	while (index > a->len)
 	{
 		if (min > a->array[index])
 		{
@@ -29,7 +30,7 @@ void	last_sort(t_nums *a)
 		}
 		index++;
 	}
-	if (pos < a->len / 2)
+	if (pos <= (a->len - 1) / 2)
 	{
 		while (a->array[a->len - 1] < a->array[0])
 			rra(a);

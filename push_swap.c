@@ -6,7 +6,7 @@
 /*   By: jcid-gon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:22:14 by jcid-gon          #+#    #+#             */
-/*   Updated: 2021/09/27 12:42:43 by jcid-gon         ###   ########.fr       */
+/*   Updated: 2021/09/28 15:29:17 by jcid-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,29 @@ void	error_message(void)
 	exit (0);
 }
 
+void is_ordered(t_nums *a)
+{
+	int	result;
+	int	i;
+	int	i2;
+
+	result = 0;
+	i = 0;
+	while (i < a->len)
+	{
+		i2 = i + 1;
+		while (i2 < a->len)
+		{
+			if (a->array[i] > a->array[i2])
+				result = 1;
+				i2++;
+		}
+		i++;
+	}
+	if (result == 0)
+		exit (0);
+}
+
 void	array_creator(int argc, char **argv, t_nums *a, t_nums *b)
 {
 	char	**temp;
@@ -25,7 +48,7 @@ void	array_creator(int argc, char **argv, t_nums *a, t_nums *b)
 	if (argc == 2)
 	{
 		if (ft_strlen(argv[1]) < 2)
-			error_message();
+			exit (0);
 		temp = ft_split(argv[1], ' ');
 		a->array = malloc((ft_strlen(argv[1]) + 1) * sizeof(int));
 		b->array = malloc((ft_strlen(argv[1]) + 1) * sizeof(int));
@@ -54,19 +77,16 @@ int	main(int argc, char **argv)
 
 	a.len = 0;
 	b.len = 0;
-	if (argc < 2)
-		error_message();
 	number_check(argv);
 	array_creator(argc, argv, &a, &b);
 	repeat_check(&a);
-	if (a.len < 2)
-		error_message();
+	is_ordered(&a);
 	if (a.len == 2)
 		two_nums(&a);
 	else if (a.len == 3)
 		three_nums(&a);
-	else if (a.len <= 5)
+	else if (a.len <= 5 && a.len > 3)
 		five_nums (&a, &b);
-	else
+	else if (a.len > 5)
 		hundred_numbers(&a, &b);
 }
