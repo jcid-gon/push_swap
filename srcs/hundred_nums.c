@@ -6,7 +6,7 @@
 /*   By: jcid-gon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:22:48 by jcid-gon          #+#    #+#             */
-/*   Updated: 2021/09/27 13:56:00 by jcid-gon         ###   ########.fr       */
+/*   Updated: 2021/09/30 12:25:41 by jcid-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	pass_from_pivot(t_nums *a, t_nums *b, int index)
 {
 	int	temp;
 
-	if (index < a->len / 2)
+	if (index < (a->len / 2) - 1)
 	{
 		temp = 0;
 		while (temp < index)

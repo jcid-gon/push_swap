@@ -6,7 +6,7 @@
 /*   By: jcid-gon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:22:14 by jcid-gon          #+#    #+#             */
-/*   Updated: 2021/09/28 15:29:17 by jcid-gon         ###   ########.fr       */
+/*   Updated: 2021/09/30 12:34:43 by jcid-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error_message(void)
 	exit (0);
 }
 
-void is_ordered(t_nums *a)
+void	is_ordered(t_nums *a)
 {
 	int	result;
 	int	i;
@@ -33,7 +33,7 @@ void is_ordered(t_nums *a)
 		{
 			if (a->array[i] > a->array[i2])
 				result = 1;
-				i2++;
+			i2++;
 		}
 		i++;
 	}

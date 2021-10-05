@@ -6,7 +6,7 @@
 /*   By: jcid-gon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 13:40:21 by jcid-gon          #+#    #+#             */
-/*   Updated: 2021/09/28 15:20:59 by jcid-gon         ###   ########.fr       */
+/*   Updated: 2021/09/30 12:50:31 by jcid-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,7 @@ void	last_sort(t_nums *a)
 		}
 		index++;
 	}
-	if (pos <= (a->len - 1) / 2)
-	{
-		while (a->array[a->len - 1] < a->array[0])
-			rra(a);
-	}
-	else
-	{
-		while (a->array[a->len - 1] < a->array[0])
-			ra(a);
-	}
+	last_rotator(a, pos);
 }
 
 void	merge_nums(t_nums *a, t_nums *b)

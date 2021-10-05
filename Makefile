@@ -7,6 +7,7 @@ SRCS =	srcs/swap.c				\
 		srcs/rotate.c			\
 		srcs/reverse_rotate.c	\
 		srcs/five_numbers.c		\
+		srcs/five_numbers2.c	\
 		srcs/hundred_nums.c		\
 		srcs/hundred_nums2.c	\
 		srcs/error_checker.c
